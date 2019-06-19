@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Website Layout</title>
+<title>Cat Cafe</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -41,20 +41,79 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1 style="color:Tomato;">Cats Cafe</h1>
-  
+  <h1 style="color:Tomato;">Cat Cafe</h1>
 </div>
 
 <div class="topnav">
-  <a href="#">Cats Cafe 소개</a>
-  <a href="#">menu</a>
-  <a href="#">오시는길</a>
+  <a href="#">Cat Cafe 소개</a>
+  <a href="#">Cat 메뉴</a>
+  <a href="#">Cats 소개</a>
 </div>
 
+<div class="row">
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>Cat Cafe에 어서오세요.</h2>
+    <img src="img_main.jpg" alt="main background" width="500" height="600">
+  </div>
+  
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Cat Cafe</p>
+  <p>Cat Cafe 전화번호:032-000-000</p>
+  <p>사업자 번호:010-0000-0000</p>
+</div>
+  
 </body>
 </html>
